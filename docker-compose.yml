@@ -1,25 +1,35 @@
-version: "3.8"
-
 services:
-  excalidraw:
-    build:
-      context: .
-      args:
-        - NODE_ENV=development
-    container_name: excalidraw
-    ports:
-      - "3000:80"
-    restart: on-failure
-    stdin_open: true
-    healthcheck:
-      disable: true
+  frontend:
+    image: yy194131/excalidraw-cn:0.0.7
     environment:
-      - NODE_ENV=development
-    volumes:
-      - ./:/opt/node_app/app:delegated
-      - ./package.json:/opt/node_app/package.json
-      - ./yarn.lock:/opt/node_app/yarn.lock
-      - notused:/opt/node_app/app/node_modules
+      - VITE_APP_BACKEND_V2_GET_URL=http://127.0.0.1:5003/api/v2/scenes/
+      - VITE_APP_BACKEND_V2_POST_URL=http://127.0.0.1:5003/api/v2/scenes/
+      - VITE_APP_WS_SERVER_URL=http://127.0.0.1:5001
+      - VITE_APP_FIREBASE_CONFIG={}
+      - VITE_APP_HTTP_STORAGE_BACKEND_URL=http://127.0.0.1:5003/api/v2
+      - VITE_APP_STORAGE_BACKEND=http
+    ports:
+      - 80:80
 
-volumes:
-  notused:
+  storage:
+    image: yy194131/excalidraw-storage:0.1.0
+    restart: always
+    environment: # docs https://github.com/alswl/excalidraw-storage-backend#environement-variables
+      - PORT=8081
+      - STORAGE_URI=redis://:abcd@127.0.0.1:6379
+    ports:
+      - 5003:8081
+
+  room:
+    image: yy194131/excalidraw-room:0.1.0
+    ports:
+      - 5001:80
+
+  redis:
+    image: redis:7.2.4-alpine
+    restart: always
+    ports:
+      - 6379:6379
+    command: redis-server --save 60 1 --loglevel warning --requirepass abcd
+    volumes:
+      - /opt/excalidraw/data:/data
