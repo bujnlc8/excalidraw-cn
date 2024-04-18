@@ -106,6 +106,7 @@ export const FONT_FAMILY = {
   Helvetica: 2,
   Cascadia: 3,
   Assistant: 4,
+  Yunfeng: 5,
 };
 
 export const THEME = {

@@ -396,6 +396,10 @@ export const exportToSvg = async (
         font-family: "Assistant";
         src: url("${assetPath}Assistant-Regular.woff2");
       }
+      @font-face {
+        font-family: "Yunfeng";
+        src: url("https://jijindou-file.licaigc.com/font/YunFengJingLongXingShu-2.ttf");
+      }
     </style>
     ${exportingFrameClipPath}
   </defs>

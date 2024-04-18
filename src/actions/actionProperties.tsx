@@ -45,6 +45,7 @@ import {
   TextAlignCenterIcon,
   TextAlignRightIcon,
   FillZigZagIcon,
+  TextIcon,
 } from "../components/icons";
 import {
   DEFAULT_FONT_FAMILY,
@@ -752,6 +753,12 @@ export const actionChangeFontFamily = register({
         text: t("labels.code"),
         icon: FontFamilyCodeIcon,
         testId: "font-family-code",
+      },
+      {
+        value: FONT_FAMILY.Yunfeng,
+        text: 'YunFengJingLongXingShu',
+        icon: TextIcon,
+        testId: "font-family-yunfeng",
       },
     ];
 
