@@ -385,7 +385,7 @@ export const exportToSvg = async (
   <defs>
     <style class="style-fonts">
       @font-face {
-        font-family: "Virgil";
+        font-family: "HandWrite";
         src: url("https://jijindou-file.licaigc.com/font/XiaolaiSC-Regular.ttf");
       }
       @font-face {

@@ -737,13 +737,13 @@ export const actionChangeFontFamily = register({
       testId: string;
     }[] = [
       {
-        value: FONT_FAMILY.Virgil,
+        value: FONT_FAMILY.HandWrite,
         text: t("labels.handDrawn"),
         icon: FreedrawIcon,
         testId: "font-family-virgil",
       },
       {
-        value: FONT_FAMILY.Helvetica,
+        value: FONT_FAMILY.Virgil,
         text: t("labels.normal"),
         icon: FontFamilyNormalIcon,
         testId: "font-family-normal",

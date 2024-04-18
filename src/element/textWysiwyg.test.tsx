@@ -806,7 +806,7 @@ describe("textWysiwyg", () => {
       updateTextEditor(editor, "Hello World!");
       editor.blur();
       expect(text.fontFamily).toEqual(
-        FONT_FAMILY.Virgil
+        FONT_FAMILY.HandWrite
       );
       UI.clickTool("text");
 
@@ -832,7 +832,7 @@ describe("textWysiwyg", () => {
       });
       expect(
         (h.elements[1] as ExcalidrawTextElementWithContainer).fontFamily,
-      ).toEqual(FONT_FAMILY.Virgil);
+      ).toEqual(FONT_FAMILY.HandWrite);
 
       //redo
       Keyboard.withModifierKeys({ ctrl: true, shift: true }, () => {
@@ -1267,7 +1267,7 @@ describe("textWysiwyg", () => {
       fireEvent.click(screen.getByTitle(/normal/i));
       expect(
         (h.elements[1] as ExcalidrawTextElementWithContainer).fontFamily,
-      ).toEqual(FONT_FAMILY.Helvetica);
+      ).toEqual(FONT_FAMILY.Virgil);
       expect(
         (h.elements[1] as ExcalidrawTextElementWithContainer).lineHeight,
       ).toEqual(1.15);
