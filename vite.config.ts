@@ -4,12 +4,21 @@ import svgrPlugin from "vite-plugin-svgr";
 import { ViteEjsPlugin } from "vite-plugin-ejs";
 import { VitePWA } from "vite-plugin-pwa";
 import checker from "vite-plugin-checker";
+import vitePluginTencentOss from "vite-plugin-tencent-oss";
 
 // To load .env.local variables
 const envVars = loadEnv("", process.cwd());
 
+const options = {
+  region: envVars.COS_REGION,
+  secretKey: envVars.COS_SECRETKEY,
+  secretId: envVars.COS_SECRETID,
+  bucket: envVars.COS_BUCKET,
+};
+
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: envVars.COS_BASE,
   server: {
     port: Number(envVars.VITE_APP_PORT || 3000),
     // open the browser
@@ -177,6 +186,7 @@ export default defineConfig({
         ],
       },
     }),
+    vitePluginTencentOss(options),
   ],
   publicDir: "./public",
 });

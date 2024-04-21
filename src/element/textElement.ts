@@ -974,7 +974,7 @@ const DEFAULT_LINE_HEIGHT = {
   [FONT_FAMILY.Virgil]: 1.15 as ExcalidrawTextElement["lineHeight"],
   // ~1.2 is the average for Virgil in WebKit and Blink, and kinda Gecko too
   [FONT_FAMILY.Cascadia]: 1.2 as ExcalidrawTextElement["lineHeight"],
-  [FONT_FAMILY.Yunfeng]: 1.2 as ExcalidrawTextElement["lineHeight"],
+  [FONT_FAMILY.Muyao]: 1.2 as ExcalidrawTextElement["lineHeight"],
 };
 
 export const getDefaultLineHeight = (fontFamily: FontFamilyValues) => {

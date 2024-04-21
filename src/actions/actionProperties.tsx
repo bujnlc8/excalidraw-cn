@@ -755,10 +755,10 @@ export const actionChangeFontFamily = register({
         testId: "font-family-code",
       },
       {
-        value: FONT_FAMILY.Yunfeng,
-        text: 'YunFengJingLongXingShu',
+        value: FONT_FAMILY.Muyao,
+        text: 'YaoSuiXinShouXie',
         icon: TextIcon,
-        testId: "font-family-yunfeng",
+        testId: "font-family-yao",
       },
     ];
 
